@@ -1,0 +1,12 @@
+<!--The title of the ion-view will be shown on the navbar-->
+<ion-view view-title="Playlists">
+  <!--The ionContent directive provides an easy to use content area that can be configured to use Ionic’s custom Scroll View, or the built in overflow scrolling of the browser.
+  创建个能支持滚动操作的content-->
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+        {{playlist.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
