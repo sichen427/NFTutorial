@@ -42,11 +42,31 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('LoginCtrl',function ($scope,$state) {
+.controller('LoginCtrl',function ($scope,$state,$http) {
   $scope.doLogin = function() {
-    alert("开始登录");
-    alert("密码正确！");
-    $state.go("app.playlists");
+
+  $http({
+    method: 'GET',
+
+  headers: {
+     'Content-Type': 'application/json'
+   },
+    //url: 'http://220.248.17.34:447/appData.json'
+    url: 'appData.json'
+  }).then(function successCallback(response) {
+      alert('success');
+      $state.go("app.playlists");
+      // this callback will be called asynchronously
+      // when the response is available
+    }, function errorCallback(response) {
+      alert('error');
+      // called asynchronously if an error occurs
+      // or server returns response with an error status.
+    });
+
+    //alert("开始登录");
+    //alert("密码正确！");
+    //$state.go("app.playlists");
   }
 })
 
