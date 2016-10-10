@@ -101,6 +101,12 @@ angular.module('starter.controllers', [])
     { title: '赵六16', id: 16 }
   ];
 })
+.controller('SearchCtrl',function($scope) {
+  $scope.showListResult = false;
+  $scope.doSearch = function() {
+    $scope.showListResult = true;
+  }
+})
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
