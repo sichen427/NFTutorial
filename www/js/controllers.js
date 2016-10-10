@@ -43,30 +43,40 @@ angular.module('starter.controllers', [])
 })
 
 .controller('LoginCtrl',function ($scope,$state,$http) {
+
+  // Form data for the login modal
+  $scope.loginData = {};
+
   $scope.doLogin = function() {
 
+    /*
   $http({
     method: 'GET',
-
   headers: {
      'Content-Type': 'application/json'
    },
-    //url: 'http://220.248.17.34:447/appData.json'
-    url: 'appData.json'
+   //TODO 这里要解决跨域的问题
+    url: 'http://127.0.0.1:8081/appserver/appData.json'
+    //url: 'appData.json'
   }).then(function successCallback(response) {
-      alert('success');
+      alert("通信成功");
       $state.go("app.playlists");
       // this callback will be called asynchronously
       // when the response is available
     }, function errorCallback(response) {
-      alert('error');
+      alert('通信错误');
       // called asynchronously if an error occurs
       // or server returns response with an error status.
     });
+  */
 
-    //alert("开始登录");
-    //alert("密码正确！");
-    //$state.go("app.playlists");
+    //TODO 登录需要抽成service来做
+    if (("admin" == $scope.loginData.username) && ("admin" == $scope.loginData.password)) {
+      alert("密码正确！");
+      $state.go("app.playlists");
+    } else {
+      alert("密码不正确！");
+    }
   }
 })
 
