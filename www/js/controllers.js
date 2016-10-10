@@ -73,7 +73,7 @@ angular.module('starter.controllers', [])
     //TODO 登录需要抽成service来做
     if (("admin" == $scope.loginData.username) && ("admin" == $scope.loginData.password)) {
       alert("密码正确！");
-      $state.go("app.playlists");
+      $state.go("app.search");
     } else {
       alert("密码不正确！");
     }
