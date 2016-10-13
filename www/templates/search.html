@@ -15,6 +15,14 @@
 
 		<ul class="list" ng-show='showListResult'>
 		    <ion-list>
+		      <ion-item ng-repeat="data in searchDatas" href="#/app/detail/{{data.id}}">
+		        {{data.id}}
+		      </ion-item>
+			</ion-list>
+		</ul>
+		<!--
+		<ul class="list" ng-show='showListResult'>
+		    <ion-list>
 		      <ion-item href="#/app/detail/111">
 		        aaaaaaaaaa
 		      </ion-item>
@@ -77,6 +85,6 @@
 		      </ion-item>
 		    </ion-list>
 		</ul>
-
+		-->
   </ion-content>
 </ion-view>

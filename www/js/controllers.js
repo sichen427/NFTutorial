@@ -103,14 +103,14 @@ angular.module('starter.controllers', [])
 })
 .controller('SearchCtrl',function($scope,$http) {
   $scope.showListResult = false;
-  $scope.searchData = {}
+  $scope.searchDatas = {}
   $scope.doSearch = function() {
     $scope.showListResult = true;
     
     //读取本地的json文件
     //TODO 从服务器上读取
     $http.get('searchData.json').success(function(data){
-      $scope.searchData = data;
+      $scope.searchDatas = data;
     }).error(function(){
         alert("an unexpected error ocurred!");
         alert("json load fail!");
@@ -122,7 +122,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller('DetailCtrl', function($scope, $stateParams) {
-  alert('aa');
+  //获得传递过来的id
+  //TODO从服务器取出来
+  $scope.detailId = $stateParams.detailId;
 })
-
 ;
