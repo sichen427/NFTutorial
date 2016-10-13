@@ -109,7 +109,7 @@ angular.module('starter.controllers', [])
     
     //读取本地的json文件
     //TODO 从服务器上读取
-    $http.get('searchData.json').success(function(data){
+    $http.get('json/searchData.json').success(function(data){
       $scope.searchDatas = data;
     }).error(function(){
         alert("an unexpected error ocurred!");
@@ -121,9 +121,16 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
-.controller('DetailCtrl', function($scope, $stateParams) {
+.controller('DetailCtrl', function($scope, $stateParams,$http) {
   //获得传递过来的id
   //TODO从服务器取出来
   $scope.detailId = $stateParams.detailId;
+    var urlStr = "json/" + $scope.detailId + ".json";
+    $http.get(urlStr).success(function(data){
+      $scope.data = data;
+    }).error(function(){
+        alert("an unexpected error ocurred!");
+        alert("json load fail!");
+    });
 })
 ;
