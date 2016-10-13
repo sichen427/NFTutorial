@@ -1,6 +1,67 @@
 <ion-view view-title="Detail">
+<!--
   <ion-content>
     <h1>{{data.id}}</h1>
     <h1>{{data.itemId}}</h1>
   </ion-content>
+  -->
+  
+  <ion-content>
+<div class="list">
+  <label class="item item-input">
+    <div class="input-label">
+      品名
+    </div>
+    <div class="input-label">
+     {{data.itemId}}
+    </div>
+  </label>
+
+  <label class="item item-input">
+    <div class="input-label">
+      到货时间
+    </div>
+    <div class="input-label">
+     {{data.arriveTime}}
+    </div>
+  </label>
+
+  <label class="item item-input">
+    <div class="input-label">
+      售价
+    </div>
+    <div class="input-label">
+     {{data.salaryMoney}}
+    </div>
+  </label>
+
+  <label class="item item-input">
+    <div class="input-label">
+      销售人员
+    </div>
+    <div class="input-label">
+     {{data.saleMan}}
+    </div>
+  </label>
+
+</div>
+
+	<!--
+	<div class="list list-inset">
+	    <div class="item">
+	      {{data.itemId}}
+	    </div>
+	    <div class="item">
+	      {{data.arriveTime}}
+	    </div>
+	    <div class="item">
+	      {{data.salaryMoney}}
+	    </div>
+	    <div class="item">
+	      {{data.saleMan}}
+	    </div>
+	</div>
+	-->
+  </ion-content>
+
 </ion-view>

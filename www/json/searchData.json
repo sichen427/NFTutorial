@@ -1,22 +1,30 @@
-[
-{"id":"1"}
-,{"id":"2"}
-,{"id":"3"}
-,{"id":"4"}
-,{"id":"5"}
-,{"id":"6"}
-,{"id":"7"}
-,{"id":"8"}
-,{"id":"9"}
-,{"id":"10"}
-,{"id":"11"}
-,{"id":"12"}
-,{"id":"13"}
-,{"id":"14"}
-,{"id":"15"}
-,{"id":"16"}
-,{"id":"17"}
-,{"id":"18"}
-,{"id":"19"}
-,{"id":"20"}
+﻿[
+    {
+        "id": "1",
+        "itemId": "iphone7",
+        "arriveTime": "2016/10/13",
+        "salaryMoney": "5000",
+        "saleMan": "张三"
+    },
+    {
+        "id": "2",
+        "itemId": "iphone7s",
+        "arriveTime": "2016/10/13",
+        "salaryMoney": "6000",
+        "saleMan": "李四"
+    },
+    {
+        "id": "3",
+        "itemId": "iphone7sp",
+        "arriveTime": "2016/10/13",
+        "salaryMoney": "6500",
+        "saleMan": "王五"
+    },
+    {
+        "id": "4",
+        "itemId": "iphone7p",
+        "arriveTime": "2016/10/13",
+        "salaryMoney": "5500",
+        "saleMan": "赵六"
+    }
 ]

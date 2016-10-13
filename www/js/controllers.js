@@ -124,6 +124,7 @@ angular.module('starter.controllers', [])
 .controller('DetailCtrl', function($scope, $stateParams,$http) {
   //获得传递过来的id
   //TODO从服务器取出来
+  //$stateParams.detailId对应的是app.js中的url: '/detail/:detailId',
   $scope.detailId = $stateParams.detailId;
     var urlStr = "json/" + $scope.detailId + ".json";
     $http.get(urlStr).success(function(data){
