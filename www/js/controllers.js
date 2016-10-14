@@ -74,7 +74,6 @@ angular.module('starter.controllers', [])
     $ionicLoading.show({
          template: '登录中...'
     });
-
   
     //等待2秒过后
     $timeout(function() {
@@ -91,8 +90,6 @@ angular.module('starter.controllers', [])
         });
       }
     }, 1000);
-    
-    //$ionicLoading.hide();
     
   }
 })
@@ -118,20 +115,33 @@ angular.module('starter.controllers', [])
     { title: '赵六16', id: 16 }
   ];
 })
-.controller('SearchCtrl',function($scope,$http) {
+.controller('SearchCtrl',function($scope,$http,$ionicLoading,$timeout) {
   $scope.showListResult = false;
   $scope.searchDatas = {}
   $scope.doSearch = function() {
-    $scope.showListResult = true;
-    
-    //读取本地的json文件
-    //TODO 从服务器上读取
-    $http.get('json/searchData.json').success(function(data){
-      $scope.searchDatas = data;
-    }).error(function(){
-        alert("an unexpected error ocurred!");
-        alert("json load fail!");
+
+    //edit start
+    $ionicLoading.show({
+         template: '检索中...'
     });
+  
+    //等待1秒过后
+    $timeout(function() {
+
+      $scope.showListResult = true;
+      $ionicLoading.hide();
+      
+      //读取本地的json文件
+      //TODO 从服务器上读取
+      $http.get('json/searchData.json').success(function(data){
+        $scope.searchDatas = data;
+      }).error(function(){
+          alert("an unexpected error ocurred!");
+          alert("json load fail!");
+      });
+    }, 1000);
+    //edit end
+
   }
 })
 
