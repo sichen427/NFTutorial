@@ -42,7 +42,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('LoginCtrl',function ($scope,$state,$http,$ionicPopup) {
+.controller('LoginCtrl',function ($scope,$state,$http,$ionicPopup,$ionicLoading,$timeout) {
 
   // Form data for the login modal
   $scope.loginData = {};
@@ -70,15 +70,30 @@ angular.module('starter.controllers', [])
     });
   */
 
-    //TODO 登录需要抽成service来做
-    if (("admin" == $scope.loginData.username) && ("admin" == $scope.loginData.password)) {
-      $state.go("app.search");
-    } else {
-      $ionicPopup.alert({
-             title: '密码不正确',
-             template: '您输入的用户名或密码不正确。<br>Demo用户名：admin 密码:admin'
+
+$ionicLoading.show({
+         template: '登录中...'
       });
-    }
+
+  
+    //等待2秒过后
+    $timeout(function() {
+
+      //TODO 登录需要抽成service来做
+      if (("admin" == $scope.loginData.username) && ("admin" == $scope.loginData.password)) {
+        $ionicLoading.hide();
+        $state.go("app.search");
+      } else {
+        $ionicLoading.hide();
+        $ionicPopup.alert({
+               title: '密码不正确',
+               template: '您输入的用户名或密码不正确。<br>Demo用户名：admin 密码:admin'
+        });
+      }
+    }, 1000);
+    
+    //$ionicLoading.hide();
+    
   }
 })
 
