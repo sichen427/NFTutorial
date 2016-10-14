@@ -71,9 +71,9 @@ angular.module('starter.controllers', [])
   */
 
 
-$ionicLoading.show({
+    $ionicLoading.show({
          template: '登录中...'
-      });
+    });
 
   
     //等待2秒过后
